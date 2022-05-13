@@ -22,16 +22,11 @@
         <!--Display profile photo-->
         <div class="col-md-8">
             {% if user.profile_pic_path %}
-
             <div class="card">
                 <img class="card" src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail" height=50%>
-
-
-
             </div>
             <div class="row">
                 {%else%}
-
                 <h3><strong>No profile picture</strong></h3>
 
                 {% endif %} {% if user == current_user %}
