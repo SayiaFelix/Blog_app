@@ -63,14 +63,15 @@ def update_pic(uname):
 #admin dashboard view
 @main.route('/admin/dashboard')
 @login_required
-def admin_dashboard():
+def dashboard():
     # prevent non-admins 
     if not current_user.is_admin:
         abort(403)
 
     blogposts = Blogs.query.all()
 
-    return render_template('admin_dashboard.html', title="Dashboard",blogposts=blogposts)
+    return render_template('dashboard.html', title="Dashboard",blogposts=blogposts)
+
 
 @main.route('/blog/', methods = ['GET','POST'])
 @login_required
