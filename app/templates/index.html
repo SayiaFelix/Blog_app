@@ -5,7 +5,7 @@
 
     <div class="jumbotron text-center">
         <h1 class="display-2">:: SiR Feliz Blog ::</h1><br>
-        <small><h4> Fine Like Whine </h4></small>
+        <small><h4> Fine Like Wine </h4></small>
         <div class="btn-group mt-2" role="group" aria-label="Basic example">
             <a class="btn btn-primary btn-lg" href="/subscribe">Subscribe</a>
         </div>
@@ -15,11 +15,12 @@
             {% for blog in blogs %}
             <div class="preview">
                 <a href="blog/new/{{ blog.id }}">
-                    <h2 class="title">{{ blog.title }}</h2>
+                    <h2 class="title fs-3">{{ blog.title }}</h2>
                 </a>
                 <p>{{blog.topic}}</p>
                 <p>{{ blog.content}}</p>
-                <small><p>Posted by {{blog.author }} on {{ blog.date.strftime('%B %d, %Y') }}</p></small>
+                <small><p>Posted by {{blog.author }}</p></small>
+                <small><p>{{ blog.date.strftime('%B %d, %Y') }}</p></small>
             </div>
             <hr> {% endfor %}
             <hr>
@@ -31,7 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    <p class="copyright text-muted m-2 medium">Copyright &copy; Sir Felix Blog 2022</p>
+                    <p class="copyright text-muted text-center m-2 medium">Copyright &copy; Sir Feliz Blog 2022</p>
                 </div>
             </div>
         </div>
