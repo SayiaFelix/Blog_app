@@ -100,7 +100,7 @@ def new_blog():
 
     return render_template('blog.html',blogpost_form= form)
 
-#ability to view single blog addition
+#single blog addition
 @main.route('/blog/<int:id>')
 def single_blog(id):
 
@@ -116,7 +116,7 @@ def blogpost_list():
     return render_template('blogposts.html', blogposts=blogposts)
 
 
-# viewing comments and respective posts
+# viewing comments
 @main.route('/blog/new/<int:blogs_id>/',methods=["GET","POST"])
 
 def blogpost(blogs_id):
@@ -173,7 +173,7 @@ def edit_blogpost(id):
         db.session.add(blogpost)
         db.session.commit()
 
-        title='SiR Feliz New Blog'
+        # title='SiR Feliz New Blog'
 
         return redirect(url_for('main.single_blog',id=blogpost.id))
 
@@ -209,7 +209,7 @@ def subscriber():
         db.session.add(subscriber)
         db.session.commit()
 
-        mail_message("Hello, Welcome To Emdee's Blog.","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
+        mail_message("Hello, Welcome To SiR Feliz Blog.","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
 
         title= "SiR Feliz Blog"
         return render_template('index.html',title=title, blogs=blogs)
