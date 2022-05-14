@@ -95,7 +95,7 @@ def new_blog():
 
         subscriber = Subscriber.query.all()
         for email in subscriber:
-            mail_message("New Blog Post from Emdee's Blog ","email/postnotification",email.email,subscriber=subscriber)
+            mail_message("New Blog Post from SiR Feliz Blog ","email/postnotification",email.email,subscriber=subscriber)
 
         return redirect(url_for('main.single_blog',id=blogpost.id))
 

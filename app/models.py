@@ -53,7 +53,7 @@ class Blogs(db.Model):
 
     @classmethod
     def get_blogposts(id):
-        blogpost = Blogs.query.filter_by(title=title).all()
+        blogpost = Blogs.query.filter_by(title= title).all()
         return blogpost
 
     def __repr__(self):
