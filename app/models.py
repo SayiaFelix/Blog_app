@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
 from datetime import datetime
-#...
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -36,7 +35,7 @@ class User(UserMixin,db.Model):
         return check_password_hash(self.password_hash,password)
 
     def __repr__(self):
-        return f'Author: {self.author}'
+        return f"Author's Name :: {self.author}"
 
 class Blogs(db.Model):
     __tablename__= 'blogs'
@@ -58,7 +57,7 @@ class Blogs(db.Model):
         return blogpost
 
     def __repr__(self):
-        return f"Blogs {self.id}','{self.date}')"
+        return f"Blogs :: {self.id}','{self.date}')"
 
 class Comments(db.Model):
     __tablename__ = 'comments'
@@ -78,7 +77,7 @@ class Comments(db.Model):
         return comments
 
     def __repr__(self):
-        return f"Comments('{self.comment}', '{self.date_posted}')"
+        return f"Comments :: ('{self.comment}', '{self.date_posted}')"
 
 class Role(db.Model):
     """
@@ -90,8 +89,7 @@ class Role(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60), unique=True)
     description = db.Column(db.String(200))
-    user = db.relationship('User', backref='role',
-                                lazy='dynamic')
+    user = db.relationship('User', backref='role',lazy='dynamic')
 
     def __repr__(self):
         return '<Role: {}>'.format(self.name)
