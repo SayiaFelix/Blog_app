@@ -1,0 +1,8 @@
+Hello {{user.author}},
+
+Welcome to SiR Feliz blog ::
+
+We have just seen you have signed up for our application, welcome to the family.
+Feel free to contribute to other blogs and leave comments too.
+
+Thanks.
