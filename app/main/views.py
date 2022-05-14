@@ -17,7 +17,7 @@ def index():
     blogs = Blogs.query.order_by(Blogs.date.desc()).all()
 
 
-    title= "SiR Feliz Blog"
+    title= "SiR Feliz Blog ::"
     return render_template('index.html',title=title, blogs=blogs)
 
 @main.route('/user/<uname>')
@@ -89,11 +89,13 @@ def new_blog():
         db.session.add(blogpost)
         db.session.commit()
 
-        title='New Blog'
+        flash("Blog post was successfully created ::")
+
+        title='New Blogpost'
 
         subscriber = Subscriber.query.all()
         for email in subscriber:
-            mail_message("New Blog Post from SiR Feliz Blog ","email/postnotification",email.email,subscriber=subscriber)
+            mail_message("New Blog Post from SiR Feliz Blog","email/postnotification",email.email,subscriber=subscriber)
 
         return redirect(url_for('main.single_blog',id=blogpost.id))
 
@@ -109,9 +111,7 @@ def single_blog(id):
 
 @main.route('/blogposts')
 def blogpost_list():
-    
     blogposts = Blogs.query.all()
-
     return render_template('posts.html', blogposts=blogposts)
 
 
@@ -140,7 +140,7 @@ def delete_blog(id):
     """
     if not current_user.is_admin:
         abort(403)
-
+        flash("Your are not allowed to to delete this blog!!!")
     blogpost = Blogs.query.filter_by(id=id).first()
 
     db.session.delete(blogpost)
@@ -155,7 +155,7 @@ def edit_blogpost(id):
     Edit a blogpost in the database
     """
 
-    if not current_user.is_admin:
+    if not current_user:
         abort(403)
 
     blogpost = Blogs.query.get(id)
@@ -171,7 +171,7 @@ def edit_blogpost(id):
         db.session.add(blogpost)
         db.session.commit()
 
-        # title='SiR Feliz New Blog'
+        title='SiR Feliz New Blog'
 
         return redirect(url_for('main.single_blog',id=blogpost.id))
 
@@ -194,6 +194,7 @@ def delete_comment(blogs_id):
 
     return redirect(url_for('main.blogpost', comment=comment, blogpost=blogpost, blogs_id=blogs_id))
 
+
 @main.route('/subscribe', methods=['GET','POST'])
 def subscriber():
 
@@ -213,8 +214,6 @@ def subscriber():
         return render_template('index.html',title=title, blogs=blogs)
 
     subscriber = Blogs.query.all()
-
     blog = Blogs.query.all()
-
 
     return render_template('subscribe.html',subscriber=subscriber,subscriber_form=subscriber_form,blog=blog)
