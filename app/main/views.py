@@ -64,10 +64,8 @@ def update_pic(uname):
 @main.route('/admin/dashboard')
 @login_required
 def dashboard():
-    # prevent non-admins 
     if not current_user.is_admin:
         abort(403)
-
     blogposts = Blogs.query.all()
 
     return render_template('dashboard.html', title="Dashboard",blogposts=blogposts)
@@ -114,7 +112,7 @@ def blogpost_list():
     
     blogposts = Blogs.query.all()
 
-    return render_template('blogposts.html', blogposts=blogposts)
+    return render_template('posts.html', blogposts=blogposts)
 
 
 # viewing comments
@@ -132,7 +130,7 @@ def blogpost(blogs_id):
 
     comments = Comments.get_comment(blogs_id)
 
-    return render_template('blogcommentlink.html',blogpost=blogpost,blogpost_form=form,comments=comments)
+    return render_template('blogcomment.html',blogpost=blogpost,blogpost_form=form,comments=comments)
 
 
 @main.route('/blog/delete/<int:id>', methods=['GET', 'POST'])
