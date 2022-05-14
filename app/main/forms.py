@@ -4,18 +4,18 @@ from wtforms.validators import DataRequired
 
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Add Your Bio ::',validators = [DataRequired()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('Upload')
 
 class BlogForm(FlaskForm):
     title = StringField('Blog Title ::')
     topic = StringField('Topic ::')
     content = TextAreaField('Blog Content ::')
-    submit = SubmitField('Submit')
+    submit = SubmitField('Post Blog ')
 
 class CommentForm(FlaskForm):
 
-    comment = TextAreaField('Comment')
-    submit = SubmitField('Drop Comments')
+    comment = TextAreaField('Drop Comment ::')
+    submit = SubmitField('Submit Comment')
 
 class SubscriberForm(FlaskForm):
 

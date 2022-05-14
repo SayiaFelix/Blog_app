@@ -60,15 +60,15 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
 
-#admin dashboard view
+#dashboard view
 @main.route('/admin/dashboard')
 @login_required
-def dashboard():
-    if not current_user.is_admin:
-        abort(403)
+def admin_dashboard():
+    # if not current_user.is_admin:
+    #     abort(403)
     blogposts = Blogs.query.all()
-
-    return render_template('dashboard.html', title="Dashboard",blogposts=blogposts)
+    
+    return render_template('admin_dashboard.html', title="Dashboard",blogposts=blogposts)
 
 
 @main.route('/blog/', methods = ['GET','POST'])
@@ -117,7 +117,6 @@ def blogpost_list():
 
 # viewing comments
 @main.route('/blog/new/<int:blogs_id>/',methods=["GET","POST"])
-
 def blogpost(blogs_id):
     blogpost = Blogs.query.filter_by(id=blogs_id).first()
     form = CommentForm()
