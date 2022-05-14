@@ -11,7 +11,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SUBJECT_PREFIX = 'SiR FELLOH Blogs ::'
+    SUBJECT_PREFIX = 'SiR Feliz Blogs ::'
     SENDER_EMAIL = 'sayiafelix18@gmail.com'
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
