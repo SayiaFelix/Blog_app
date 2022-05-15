@@ -27,7 +27,7 @@ Bloggers is able to:
 ## Specifications
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| Quotes | **Randomly** | Appears on the Home page randomly after refreshing the page|
+| Quotes | **Random** | Appears on the Home page randomly after refreshing the page|
 | Blogger Authentication | **On demand** | Access Admin dashboard |
 | Display blogs by most recent | **Home page** | Clickable links to open all blogs |
 | Display profile | **Click profile page** | Redirected to a page with your profile |
