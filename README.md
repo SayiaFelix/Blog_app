@@ -27,7 +27,8 @@ Bloggers is able to:
 ## Specifications
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| Writer/Blogger Authentication | **On demand** | Access Admin dashboard |
+| Quotes | **Randomly** | Appears on the Home page randomly after refreshing the page|
+| Blogger Authentication | **On demand** | Access Admin dashboard |
 | Display blogs by most recent | **Home page** | Clickable links to open all blogs |
 | Display profile | **Click profile page** | Redirected to a page with your profile |
 | Display single blogs | **On link click** | Blog is displayed with comment ready function plus any comments already stored |
