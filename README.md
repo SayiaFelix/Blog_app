@@ -1,4 +1,4 @@
-# SiR Feliz Blog_app
+# SiR Feliz Blog
 
 ## Built By [Sayia Felix](https://github.com/SayiaFelix/)
 
