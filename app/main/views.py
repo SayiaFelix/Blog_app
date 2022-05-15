@@ -102,9 +102,10 @@ def new_blog():
 @main.route('/blog/<int:id>')
 def single_blog(id):
 
+    Quote = get_quote()
     blogpost = Blogs.query.get(id)
 
-    return render_template('oneblogpost.html',blogpost=blogpost)
+    return render_template('oneblogpost.html',Quote=Quote,blogpost=blogpost)
 
 @main.route('/blogposts')
 def blogpost_list():
@@ -171,8 +172,7 @@ def edit_blogpost(id):
 
         title='SiR Feliz New Blog'
 
-        return redirect(url_for('main.single_blog',id=blogpost.id))
-
+        return redirect(url_for('main.single_blog',titie=title,id=blogpost.id))
 
     form.title.data = blogpost.title
     form.content.data = blogpost.content

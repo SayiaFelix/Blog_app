@@ -6,6 +6,9 @@
     {% block content %}
     <div class="jumbotron text-center shadow p-3 mb-4 bg-secondary rounded">
         <h1 class="display-2 text-light"> SiR Feliz's Blog </h1><br>
+        <small><h4 class="text-light"> {{Quote.quote}} </h4></small>
+        <p class="text-light">Author: <strong>{{Quote.author}}</strong></p>
+        <br>
         <small><h4 class="text-light"> Review Our Blogs.. ::</h4></small>
         <div class="btn-group mt-2" role="group" aria-label="Basic example">
             <a class="btn btn-primary btn-lg" href="/subscribe">Subscribe</a>
