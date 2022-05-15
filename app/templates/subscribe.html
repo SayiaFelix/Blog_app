@@ -1,17 +1,17 @@
 {% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
 
-<div class="jumbotron text-center" style="background-image: url('static/photos/bgg3.jpg')">
-    <h1 class="display-2 text-dark"> SiR Feliz's Blog</h1><br>
-    <small><h4 class="text-dark">Join our Team.. ::</h4></small>
+<div class="jumbotron text-center" style="background-image: url('static/photos/bgg2.jpg')">
+    <h1 class="display-2 text-light"> SiR Feliz's Blog</h1><br>
+    <small><h4 class="text-light">Join our Team..::</h4></small>
     <div class="btn-group mt-2" role="group" aria-label="Basic example">
-        <a class="btn btn-primary btn-lg" href="/blogposts"> : Trending Blogs :</a>
+        <a class="btn btn-primary btn-lg" href="/blogposts">  Trending Blogs </a>
     </div>
 </div>
+<hr>
 <div class="container">
     <div style="width: 70%; height:50%">
-        <h2>Subscibe to SiR Feliz's Blog ::</h2>
+        <h1 class="fw-bold">Subscibe to SiR Feliz's Blog ::</h1>
         <br> {{ wtf.quick_form(subscriber_form) }}
     </div>
 </div>
-
-{% endblock %}
+<hr> {% endblock %}

@@ -112,3 +112,11 @@ class Subscriber(UserMixin, db.Model):
 
    def __repr__(self):
        return f'User {self.email}'
+
+class Quote:
+    '''
+    Quote class to define Quotes Objects
+    '''
+    def __init__(self,author, quote):
+        self.author = author
+        self.quote = quote

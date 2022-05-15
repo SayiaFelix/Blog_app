@@ -1,12 +1,13 @@
 from flask import render_template
 from flask import render_template,request,redirect,url_for,abort, flash
 from flask_login import login_required,current_user
+from app.requests import get_quote
 from ..email import mail_message
 from ..models import *
 from . import main
 from .. import db,photos
 from .forms import UpdateProfile,BlogForm,CommentForm,SubscriberForm
-import markdown2
+
 
 @main.route('/')
 def index():
@@ -15,10 +16,9 @@ def index():
     return
     '''
     blogs = Blogs.query.order_by(Blogs.date.desc()).all()
-
-
+    Quote = get_quote()
     title= "SiR Feliz Blog ::"
-    return render_template('index.html',title=title, blogs=blogs)
+    return render_template('index.html',title=title, Quote=Quote,blogs=blogs)
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -64,8 +64,6 @@ def update_pic(uname):
 @main.route('/admin/dashboard')
 @login_required
 def admin_dashboard():
-    # if not current_user.is_admin:
-    #     abort(403)
     blogposts = Blogs.query.all()
     
     return render_template('admin_dashboard.html', title="Dashboard",blogposts=blogposts)
@@ -78,7 +76,6 @@ def new_blog():
     form = BlogForm()
 
     if form.validate_on_submit():
-
         topic = form.topic.data
         content= form.content.data
         title=form.title.data
@@ -118,8 +115,10 @@ def blogpost_list():
 # viewing comments
 @main.route('/blog/new/<int:blogs_id>/',methods=["GET","POST"])
 def blogpost(blogs_id):
+    Quote = get_quote()
     blogpost = Blogs.query.filter_by(id=blogs_id).first()
     form = CommentForm()
+
     if form.validate_on_submit():
         comment = form.comment.data
         new_blogpost_comment = Comments(comment=comment,blogs_id=blogs_id)
@@ -129,7 +128,7 @@ def blogpost(blogs_id):
 
     comments = Comments.get_comment(blogs_id)
 
-    return render_template('blogcomment.html',blogpost=blogpost,blogpost_form=form,comments=comments)
+    return render_template('blogcomment.html',Quote=Quote,blogpost=blogpost,blogpost_form=form,comments=comments)
 
 
 @main.route('/blog/delete/<int:id>', methods=['GET', 'POST'])
@@ -138,9 +137,9 @@ def delete_blog(id):
     """
     Delete a blogpost from the database
     """
-    if not current_user.is_admin:
+    if not current_user:
         abort(403)
-        flash("Your are not allowed to to delete this blog!!!")
+       
     blogpost = Blogs.query.filter_by(id=id).first()
 
     db.session.delete(blogpost)
@@ -154,7 +153,6 @@ def edit_blogpost(id):
     """
     Edit a blogpost in the database
     """
-
     if not current_user:
         abort(403)
 
@@ -198,7 +196,7 @@ def delete_comment(blogs_id):
 @main.route('/subscribe', methods=['GET','POST'])
 def subscriber():
 
-    subscriber_form=SubscriberForm()
+    subscriber_form = SubscriberForm()
     blogs = Blogs.query.order_by(Blogs.date.desc()).all()
 
     if subscriber_form.validate_on_submit():
@@ -210,7 +208,7 @@ def subscriber():
 
         mail_message("Hello, Welcome To SiR Feliz Blog.","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
 
-        title= "SiR Feliz Blog"
+        title = "SiR Feliz Blog"
         return render_template('index.html',title=title, blogs=blogs)
 
     subscriber = Blogs.query.all()
