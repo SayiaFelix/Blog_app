@@ -64,7 +64,7 @@ Bloggers is able to:
 
 * To run the application, in your terminal:
 
-        $ chmod +x start.sh
+        $ chmod a+x start.sh
         $ ./start.sh
 
 ## Testing the Application
