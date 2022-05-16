@@ -207,9 +207,9 @@ def subscriber():
         db.session.commit()
 
         mail_message("Hello, Welcome To SiR Feliz Blog.","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
-
+        Quote = get_quote()
         title = "SiR Feliz Blog"
-        return render_template('index.html',title=title, blogs=blogs)
+        return render_template('index.html',Quote=Quote,title=title, blogs=blogs)
 
     subscriber = Blogs.query.all()
     blog = Blogs.query.all()
