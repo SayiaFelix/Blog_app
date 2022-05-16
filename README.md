@@ -3,7 +3,7 @@
 ## Built By [Sayia Felix](https://github.com/SayiaFelix/)
 
 ## Description
-SiR Feliz application is an application where a user can sign in and login in his/her account then the user is able to add a blog post ,edit ,delete and also subscribe to my app.User will also be able to see random quotes on home page upone refresh.
+SiR Feliz application is an application where a user can sign in and login in his/her account then the user is able to add a blog post ,edit ,delete and also subscribe to my app.User will also be able to see random quotes on home page upon refresh.
 
 
 ## User Stories
