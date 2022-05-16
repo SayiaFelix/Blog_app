@@ -3,7 +3,7 @@
 ## Built By [Sayia Felix](https://github.com/SayiaFelix/)
 
 ## Description
-SiR Feliz application is an application where a user can sign in and login in his/her account then the user is able to add a blog post ,edit ,delete and also subscribe to my app.
+SiR Feliz application is an application where a user can sign in and login in his/her account then the user is able to add a blog post ,edit ,delete and also subscribe to my app.User will also be able to see random quotes on home page upone refresh.
 
 
 ## User Stories
@@ -31,11 +31,11 @@ Bloggers is able to:
 | Blogger Authentication | **On demand** | Access Admin dashboard |
 | Display blogs by most recent | **Home page** | Clickable links to open all blogs |
 | Display profile | **Click profile page** | Redirected to a page with your profile |
-| Display single blogs | **On link click** | Blog is displayed with comment ready function plus any comments already stored |
-| To add a blog  | **Through Admin dashboard** | Redirected to the new blog form collection form|
-| To edit a blog  | **Through Admin dashboard** | Redirected to the  blog form collection form and editing happens|
-| To delete a blog/comments  | **Through Admin dashboard and on displays** | Bad comments and posts can be deleted|
-| To subscribe  | **On button click** | Users can subscribe on click|
+| Display single blogs | **On link click** | Blog is displayed with comment ready to be added|
+| To add a blog  | **Through  dashboard** | Redirected to the new blog form collection form|
+| To edit a blog  | **Through dashboard** | Redirected to the  blog form |
+| To delete a blog/comments  | **Through dashboard and on displays** | Bad comments and posts can be deleted while a current user|
+| To subscribe  | **On button click** | Users can subscribe on click though you may receive internal serve error ut you will receive our confirmation messeage|
 
 
 ## SetUp / Installation Requirements
@@ -54,7 +54,7 @@ Bloggers is able to:
 ## Running the Application
 * Creating the virtual environment
 
-        $ python3.6 -m venv --without-pip virtual
+        $ python3.9 -m venv --without-pip virtual
         $ source virtual/bin/env
         $ curl https://bootstrap.pypa.io/get-pip.py | python
 
