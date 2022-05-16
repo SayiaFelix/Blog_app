@@ -35,7 +35,7 @@ Bloggers is able to:
 | To add a blog  | **Through  dashboard** | Redirected to the new blog form collection form|
 | To edit a blog  | **Through dashboard** | Redirected to the  blog form |
 | To delete a blog/comments  | **Through dashboard and on displays** | Bad comments and posts can be deleted while a current user|
-| To subscribe  | **On button click** | Users can subscribe on click though you may receive internal serve error ut you will receive our confirmation messeage|
+| To subscribe  | **On button click** | Users can subscribe on click and you will receive our confirmation messeage|
 
 
 ## SetUp / Installation Requirements
