@@ -5,17 +5,13 @@
     <div class="jumbotron text-center" style="background-image: url('static/photos/bgg1.jpg')">
         <h1 class="display-2 text-light"> SiR Feliz's Blog </h1><br>
         <small><h4 class="text-light "> {{Quote.quote}} </h4></small>
-        <p class="text-light ">Author: <strong>{{Quote.author}}</strong></p>
-        <div class="btn-group mt-2 " role="group " aria-label="Basic example ">
-            <a class="btn btn-primary btn-lg " href="/blogposts ">  Trending Blogs </a>
+        <p class="text-light fs-1 fw-bold"><strong>{{Quote.author}}</strong></p>
+        <div class="btn-group mt-2" role="group " aria-label="Basic example ">
+            <a class="btn btn-primary btn-lg" href="/blogposts ">  Trending Blogs </a>
         </div>
     </div>
-    <hr> {% for message in get_flashed_messages() %}
-    <div class="alert alert-danger ">
-        <button type="button " class="close " data-dismiss="alert ">&times;</button> {{ message }}
-    </div>
-    {% endfor %}
-    <div class="container ">
+    <hr>
+    <div class="container">
         <h1 class="text-center fw-bold "> :: Blogs ::</h1>
         <hr>
         <div class="row ">
@@ -56,7 +52,7 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-lg-8 col-md-10 mx-auto ">
-                    <p class="copyright text-center m-2 medium text-dark ">Copyright &copy; Sir Feliz Blog @2022</p>
+                    <p class="copyright text-center m-2 medium text-dark ">Copyright &copy; Sir Feliz's Blog @2022</p>
                 </div>
             </div>
         </div>
