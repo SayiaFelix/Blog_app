@@ -35,7 +35,7 @@ class User(UserMixin,db.Model):
         return check_password_hash(self.password_hash,password)
 
     def __repr__(self):
-        return f"Author :: {self.author}"
+        return f"{self.author}"
 
 class Blogs(db.Model):
     __tablename__= 'blogs'

@@ -7,9 +7,9 @@ class UpdateProfile(FlaskForm):
     submit = SubmitField('Upload')
 
 class BlogForm(FlaskForm):
-    title = StringField('Blog Title ::')
+    title = StringField('Post Title ::')
     topic = StringField('Topic ::')
-    content = TextAreaField('Blog Content ::')
+    content = TextAreaField('Post Content ::')
     submit = SubmitField('Post Blog ')
 
 class CommentForm(FlaskForm):

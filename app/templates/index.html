@@ -32,8 +32,8 @@
                         <h6 class="media-heading fs-2 fw-bold ">{{ blog.topic }}</h6>
                         <p class="media-content fs-3 ">{{ blog.content }}</p>
                     </div>
-                    <small><p class="fs-3 ">Posted by <strong> {{blog.author }}</strong> </p></small>
-                    <small><p class="fs-3 text-dark ">{{ blog.date.strftime('%B %d, %Y') }}</p></small>
+                    <small><p class="fs-3">Posted by <strong> {{blog.author }}</strong> </p></small>
+                    <small><p class="fs-3 text-dark">{{ blog.date.strftime('%B %d, %Y') }}</p></small>
                     <hr>
                 </div>
                 <hr> {% endfor %}
