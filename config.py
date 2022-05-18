@@ -4,7 +4,7 @@ class Config:
     QUOTE_API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
     SECRET_KEY=os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = 'postgres://mwtvnlerdottey:f8a17940e5c7983fd4ae2999dfa5939498ffbc0cdd0ea2f63620d54647c87807@ec2-54-165-184-219.compute-1.amazonaws.com:5432/dcmp8l9rgi8chs'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jay123@localhost/blogpost'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jay123@localhost/blogposts'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     #  email configurations
@@ -40,7 +40,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jay123@localhost/blogpost'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jay123@localhost/blogposts'
  
 DEBUG = True
 

@@ -61,7 +61,7 @@ def update_pic(uname):
     return redirect(url_for('main.profile',uname=uname))
 
 #dashboard view
-@main.route('/admin/dashboard')
+@main.route('/dashboard')
 @login_required
 def admin_dashboard():
     blogposts = Blogs.query.all()
