@@ -28,7 +28,7 @@ class ProdConfig(Config):
         uri = uri.replace("postgres://", "postgresql://", 1)
 
         SQLALCHEMY_DATABASE_URI=uri
-
+ 
   
 class TestConfig(Config):
       SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/blogpost_test'
