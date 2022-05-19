@@ -5,7 +5,7 @@
     <div class="row">
         <!-- displaying  Username-->
         <div class="col-md-4">
-            <h3 class="fs-1">Author: {{user.author| capitalize}} </h3>
+            <h3 class="fs-1">Author: <strong>{{user.author| capitalize}}</strong> </h3>
             <br>
             <hr>
             <a href="{{url_for('main.update_profile',uname=user.author)}}">Edit profile</a>
